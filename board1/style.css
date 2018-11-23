@@ -1,0 +1,41 @@
+:root {
+    --color-yellow: rgba(229, 192, 123, 1);
+    --color-orange: rgba(209, 154, 102, 1);
+    --color-green: rgba(152, 195, 121, 1);
+    --color-purple: rgba(198, 120, 221, 1);
+    --color-blue: rgba(97, 175, 239, 1);
+    --color-red: rgba(224, 108, 117, 1);
+    --color-deepred: rgba(190, 80, 70, 1);
+    --color-blue-alt: rgba(86, 182, 194, 1);
+    --color-link: rgba(78, 148, 206, 1);
+    --color-text-title: rgba(204, 204, 204, 1);
+    --color-text-active: rgba(187, 187, 187, 1);
+    --color-text-idle: rgba(92, 99, 112, 1);
+    --color-text-alt: rgba(99, 109, 131, 1);
+
+    --color-bg: rgba(33, 37, 43, 1);
+    --color-hover: rgba(59, 65, 77, 1);
+    --color-idle: rgba(51, 56, 66, 1);
+
+    --color-terrenus: rgba(51, 56, 66, 1);
+    --color-tellus-mater: rgba(51, 56, 66, 1);
+    --color-genesaris: rgba(51, 56, 66, 1);
+
+    --color-tile-idle: rgba(40, 44, 52, 1);
+    --color-tile-active: rgba(44, 49, 58, 1);
+    --scroll-idle: rgba(59, 65, 77, 1);
+    --scroll-hover: rgba(65, 72, 85, 1);
+    --scroll-active: rgba(78, 85, 99, 1);
+    
+    font-size: 12px;
+    --grid-gap: 1%;
+    font-family: 'Rubik';
+}
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--scroll-idle); border-radius: .0625rem; }
+::-webkit-scrollbar-thumb:hover { background: var(--scroll-hover); }
+::-webkit-scrollbar-thumb:active { background: var(--scroll-active); }
+::-webkit-scrollbar-button { display: none; }
+svg { width: 100%; }
+
