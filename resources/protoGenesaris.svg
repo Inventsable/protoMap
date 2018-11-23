@@ -1,0 +1,27 @@
+<svg id="protoWorld" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1680 840">
+  <defs>
+    <style>
+      .map-bg {
+        fill: #282c34;
+      }
+
+      .map-genesaris {
+        fill: #e06c75;
+      }
+
+      .cls-3 {
+        fill: none;
+        stroke: #21252b;
+        stroke-miterlimit: 10;
+      }
+
+      .map-genesaris-bounds {
+        fill: #333842;
+        opacity: 0.2;
+      }
+    </style>
+  </defs>
+  <title>protoGenesaris</title>
+  <rect id="_2x1bg" data-name="2x1bg" class="map-bg" width="1680" height="840"/>
+  
+</svg>

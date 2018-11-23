@@ -1,0 +1,290 @@
+:root {
+    --color-yellow: rgba(229, 192, 123, 1);
+    --color-orange: rgba(209, 154, 102, 1);
+    --color-green: rgba(152, 195, 121, 1);
+    --color-purple: rgba(198, 120, 221, 1);
+    --color-blue: rgba(97, 175, 239, 1);
+    --color-red: rgba(224, 108, 117, 1);
+    --color-deepred: rgba(190, 80, 70, 1);
+    --color-blue-alt: rgba(86, 182, 194, 1);
+    --color-link: rgba(78, 148, 206, 1);
+    --color-text-title: rgba(204, 204, 204, 1);
+    --color-text-active: rgba(187, 187, 187, 1);
+    --color-text-idle: rgba(92, 99, 112, 1);
+    --color-text-alt: rgba(99, 109, 131, 1);
+
+    --color-bg: rgba(33, 37, 43, 1);
+    --color-hover: rgba(59, 65, 77, 1);
+    --color-idle: rgba(51, 56, 66, 1);
+
+    --color-terrenus: rgba(51, 56, 66, 1);
+    --color-tellus-mater: rgba(51, 56, 66, 1);
+    --color-genesaris: rgba(51, 56, 66, 1);
+
+    --color-tile-idle: rgba(40, 44, 52, 1);
+    --color-tile-active: rgba(44, 49, 58, 1);
+    --scroll-idle: rgba(59, 65, 77, 1);
+    --scroll-hover: rgba(65, 72, 85, 1);
+    --scroll-active: rgba(78, 85, 99, 1);
+    
+    font-size: 12px;
+    --grid-gap: 1%;
+    font-family: 'Rubik';
+}
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--scroll-idle); border-radius: .0625rem; }
+::-webkit-scrollbar-thumb:hover { background: var(--scroll-hover); }
+::-webkit-scrollbar-thumb:active { background: var(--scroll-active); }
+::-webkit-scrollbar-button { display: none; }
+svg { width: 100%; }
+
+/* [style*="--aspect-ratio"] > :first-child {
+  width: 100%;
+}
+[style*="--aspect-ratio"] > img {  
+  height: auto;
+} 
+@supports (--custom:property) {
+  [style*="--aspect-ratio"] {
+    position: absolute;
+    top: 0;
+  }
+  [style*="--aspect-ratio"]::before {
+    content: "";
+    display: block;
+    padding-bottom: calc(100% / (var(--aspect-ratio)));
+  }  
+  [style*="--aspect-ratio"] > :first-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }  
+} */
+
+#protoWorld {
+    width: 88%;
+}
+
+[class^="map-area"] {
+    cursor: pointer;
+}
+
+.map-bg {
+    fill: var(--color-tile-idle);
+}
+
+.map-grid {
+    fill: var(--color-tile-active);
+}
+
+.map-area-tellus-mater {
+  fill: var(--color-tellus-mater);
+  stroke: var(--color-bg);
+  stroke-miterlimit: 10;
+}
+
+.map-area-tellus-mater-bounds {
+  fill: #333842;
+  opacity: 0.2;
+}
+
+.map-area-terrenus {
+  fill: var(--color-terrenus);
+  stroke: var(--color-bg);
+  stroke-miterlimit: 10;
+}
+
+.map-area-terrenus-bounds {
+  fill: #333842;
+  opacity: 0.2;
+}
+
+.map-area-genesaris {
+  fill: var(--color-genesaris);
+  stroke: var(--color-bg);
+  stroke-miterlimit: 10;
+}
+
+.map-area-genesaris-bounds {
+  fill: #333842;
+  opacity: 0.2;
+}
+
+.map-gridline {
+    fill: none;
+    stroke: var(--color-tile-active);
+    stroke-miterlimit: 10;
+    stroke-width: 5px;
+}
+
+#app {
+    background-color: var(--color-bg);
+    position: absolute;
+    width: 100%;
+    border: 2px solid var(--color-tile-idle);
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.world-wrap {
+    box-sizing: border-box;
+    /* background-color: var(--color-bg); */
+    /* position: absolute; */
+    width: 100%;
+    /* border: 2px solid var(--color-tile-active); */
+    padding-top: 50%; /* 2:1 Aspect Ratio */
+}
+
+.world-wrap-contents {
+    background-color: var(--color-tile-idle); 
+    width: 100%;
+    /* height: calc(100%/1.21); */
+    position: absolute;
+    top: 0.575rem;
+    left: 10.8%;   
+}
+
+.test {
+    background-image: url('../resources/worldmock.png');
+    background-position: 2%;
+    background-size: 92%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+.appGrid {
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+    grid-column-gap: var(--grid-gap);
+    padding: 1%;
+    /* min-height: 500px; */
+}
+
+[class^="mainLeft-"] {
+    background-color: var(--color-tile-idle);
+}
+
+[class^="mainRight-"] {
+    display: grid;
+    grid-template-rows: 5fr 1fr;
+    grid-row-gap: var(--grid-gap);
+}
+
+.toolbar {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: no-wrap;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: var(--grid-gap); */
+    width: 100%;
+}
+
+[class^="toolbar-"] {
+    background-color: var(--color-tile-idle);
+    width: 48.5%;
+}
+
+a {
+    color: var(--color-link);
+}
+.anno-title {
+    max-width: 90%
+}
+
+.anno-tail {
+    /* border: 2px solid red; */
+    min-width: 10%;
+    min-height: 10%;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.userClass {
+    cursor: pointer;
+    border-radius: 3.5rem;
+    border: 2px solid var(--color-idle);
+    width: 3.5rem;
+    height: 3.5rem;
+    margin: 0px .5rem;
+    background-size: contain;
+    background-position: center;
+}
+
+.toolbar-anno {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 2rem;
+    padding: 0rem 1rem;
+    color: var(--color-text-title);
+}
+
+@media only screen and (max-width:720px) {
+    #app {
+        /* background-color: red; */
+        padding-top: 200%;
+        width: 100%;
+    }
+    #protoWorld {
+        width: 100%;
+    }
+
+    .world-wrap {
+        overflow: hidden;
+    }
+
+    .appGrid {
+        grid-template-columns: 0fr 10fr;
+        padding: 0px;
+    }
+
+    [class^="mainRight-"] {
+        display: grid;
+        grid-template-rows: 1fr 3fr;
+        grid-row-gap: var(--grid-gap);
+    }
+    .world-wrap-contents {
+        background-color: var(--color-tile-idle); 
+        width: 99%;
+        height: 23%;
+        position: absolute;
+        top: -0.4rem;
+        left: 0px;   
+    }   
+
+    .toolbar {
+        flex-direction: column;
+        margin-top: -1rem;
+        padding: 1% 1% 1% 0px;
+        width: 97%;
+        /* grid-template-rows: 1fr 5fr; */
+        /* grid-column-gap: var(--grid-gap); */
+    }
+
+    .toolbar-anno {
+        height: 8%;
+        width: 100%;
+        margin-bottom: 2%;
+    }
+
+    .toolbar-desc {
+        height: 90%;
+        width: 100%;
+
+    }
+
+    .map-gridline {
+        stroke-width: 5px;
+    }
+}
