@@ -13,9 +13,22 @@
     --color-text-idle: rgba(92, 99, 112, 1);
     --color-text-alt: rgba(99, 109, 131, 1);
 
+    --color-water: transparent;
+    --color-water-hover: rgba(92, 99, 112, 1);
+    --color-terrain: rgba(51, 56, 66, 1);
+    --color-shore: rgba(99, 109, 131, 1);
+    --color-coast: rgba(255, 255, 255, .025);
+    --color-terrain-hover: rgba(59, 65, 77, 1);
+    --color-shore-hover: rgba(109, 119, 141, 1);
+    --color-coast-hover: rgba(255, 255, 255, .035);
+
+    --color-bumper: rgba(171, 178, 191, .2);
+
     --color-bg: rgba(33, 37, 43, 1);
     --color-hover: rgba(59, 65, 77, 1);
     --color-idle: rgba(51, 56, 66, 1);
+
+    --color-bounds: rgba(255, 255, 255, .025);
 
     --color-terrenus: rgba(51, 56, 66, 1);
     --color-tellus-mater: rgba(51, 56, 66, 1);
@@ -27,9 +40,13 @@
     --scroll-hover: rgba(65, 72, 85, 1);
     --scroll-active: rgba(78, 85, 99, 1);
     
+    --quart: cubic-bezier(0.76, 0.00, 0.24, 1.00);
+    --quad: cubic-bezier(0.48, 0.04, 0.52, 0.96);
+    --quint: cubic-bezier(0.84, 0.00, 0.16, 1.00);
     font-size: 12px;
     --grid-gap: 1%;
     font-family: 'Rubik';
+    transition: all 80ms var(--quart) 20ms;
 }
 /* Scrollbar */
 ::-webkit-scrollbar { width: 10px; background: transparent; }
@@ -39,3 +56,187 @@
 ::-webkit-scrollbar-button { display: none; }
 svg { width: 100%; }
 
+.pro-map-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: var(--color-tile-idle);
+}
+
+.pro-map-contents {
+    box-sizing: border-box;
+    width: 80vw;
+    height: 80vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 2px solid green; */
+}
+
+.pro-map-info {
+    box-sizing: border-box;
+    display: grid;
+    width: 19vw;
+    background-color: var(--color-bg);
+}
+
+.map-background {
+    fill: var(--color-bg);
+}
+
+.map-bg-gridline {
+    fill: none;
+    stroke: var(--color-tile-active);
+    stroke-miterlimit: 10;
+    stroke-width: 2px;
+}
+
+.map-bumper-btn {
+    fill: var(--color-idle);
+    stroke: var(--color-idle);
+    stroke-miterlimit: 10;
+    stroke-width: 2.75px;
+}
+
+.bumper {
+    cursor: pointer;
+}
+
+.bumper:hover > .map-bumper-btn {
+    fill: var(--color-hover);
+}
+
+.anno {
+    user-select: none;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 19vw;
+    top: 68vw;
+    left: 1vw;
+}
+
+.annoL {
+    width: 48%;
+    font-size: 1.5rem;
+    color: var(--color-text-active);
+}
+
+.annoR {
+    width: 48%;
+    font-size: 1rem;
+    color: var(--color-text-idle);
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+/* [class^="map-marker-"] {
+    cursor: pointer;
+} */
+
+.map-marker-place-idle {
+    fill: var(--color-water-hover);
+    stroke: var(--color-bg);
+    stroke-width: 1px;
+    cursor: default;
+}
+
+.map-marker-place-hover {
+    fill: rgba(152, 195, 121, .25);
+    stroke: var(--color-green);
+    stroke-width: 2px;
+    cursor: pointer;
+}
+
+.map-marker-place-selected {
+    fill: rgba(97, 175, 239, .25);
+    stroke: var(--color-blue);
+    stroke-width: 2px;
+    cursor: pointer;
+}
+
+.map-marker-town-idle {
+    fill: var(--color-water-hover);
+    stroke: var(--color-bg);
+    stroke-width: 1px;
+    cursor: default;
+}
+
+.map-marker-town-hover {
+    fill: rgba(97, 175, 239, .25);
+    stroke: var(--color-blue);
+    stroke-width: 2px;
+    cursor: pointer;
+}
+
+.map-marker-town-selected {
+    fill: var(--color-blue);
+    stroke: rgba(97, 175, 239, .25);
+    stroke-width: 2px;
+    cursor: pointer;
+}
+
+.map-marker-city-idle {
+    fill: var(--color-water-hover);
+    stroke: var(--color-bg);
+    stroke-width: 1px;
+    cursor: default;
+}
+
+.map-marker-city-hover {
+    fill: rgba(97, 175, 239, .25);
+    stroke: var(--color-blue);
+    stroke-width: 2px;
+    cursor: pointer;
+}
+
+.map-marker-city-selected {
+    fill: var(--color-blue);
+    stroke: rgba(97, 175, 239, .25);
+    stroke-width: 2px;
+    cursor: pointer;
+}
+
+
+
+.map-marker-place-alt:hover {
+    cursor: pointer;
+}
+
+.map-world-idle {
+    fill: var(--color-bg);
+}
+
+.map-active {
+    fill: var(--color-water-hover);
+    stroke: var(--color-bg);
+    stroke-miterlimit: 10;
+    stroke-width: 1px;
+}
+
+
+.map-world-bg {
+    fill: var(--color-terrain);
+}
+
+.map-bumper-label {
+    fill: none;
+    stroke: var(--color-bumper);
+    stroke-linejoin: round;
+    stroke-width: .625rem;
+}
+
+[class^="map-terrenus-"] {
+    transition: 
+        fill 120ms var(--quart) 20ms,
+        stroke 120ms var(--quart) 20ms;
+    stroke-miterlimit: 10;
+    stroke-linejoin: round;
+}
+
+[class^="map-water-"] {
+    fill: none;
+    stroke-miterlimit: 10;
+}

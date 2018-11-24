@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #21252b;
+      }
+
+      .map-terrenus- {
+        fill: #333842;
+        stroke: #abb2bf;
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <title>soloTerrenusLand1.2</title>
+  <g id="bg">
+    <rect class="cls-1" width="1000" height="1000"/>
+  </g>
+  <g id="Land">
+    <g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1002.76 1000">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #21252b;
+      }
+
+      .map-bumper-btn {
+        fill: #333842;
+        stroke: #333842;
+        stroke-miterlimit: 10;
+        stroke-width: 2.76px;
+      }
+
+      .map-bumper-label {
+        fill: none;
+        stroke: #abb2bf;
+        stroke-linejoin: round;
+        stroke-width: 11px;
+        opacity: 0.2;
+      }
+    </style>
+  </defs>
+  <title>soloBumpers</title>
+  <g id="bg">
+    <rect class="cls-1" x="1.38" width="1000" height="1000"/>
+  </g>
+  <g id="ui_mock" data-name="ui mock">
+    <g id="right-bumper">
+      <path class="map-bumper-btn" d="M983,376.5h18.4a0,0,0,0,1,0,0v249a0,0,0,0,1,0,0H983a31.6,31.6,0,0,1-31.6-31.6V408.1A31.6,31.6,0,0,1,983,376.5Z"/>
+      <polyline class="map-bumper-label" points="961.38 474.13 988.25 501 961.38 527.87"/>
+    </g>
+    <g id="left-bumper">
+      <path class="map-bumper-btn" d="M31.6,376.5H50a0,0,0,0,1,0,0v249a0,0,0,0,1,0,0H31.6A31.6,31.6,0,0,1,0,593.9V408.1A31.6,31.6,0,0,1,31.6,376.5Z" transform="translate(51.38 1002) rotate(180)"/>
+      <polyline class="map-bumper-label" points="41.25 474.13 14.38 501 41.25 527.87"/>
+    </g>
+  </g>
+</svg>

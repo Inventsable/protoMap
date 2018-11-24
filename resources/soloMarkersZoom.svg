@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41 42.87">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #e5c07b;
+        stroke: #333842;
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <title>soloMarkersZoom</title>
+  <g id="Layer_1" data-name="Layer 1">
+    <rect class="cls-1" x="0" y="0" width="40" height="40"/>
+    <g id="city">
+      <path id="ignatz" class="cls-2" d="M20,0A15.18,15.18,0,0,0,5,15.37c0,7,10.17,19.75,13.76,24a1.6,1.6,0,0,0,2.47,0c3.59-4.28,13.77-17,13.77-24A15.19,15.19,0,0,0,20,0Zm0,22.38a6,6,0,1,1,5.85-6A5.9,5.9,0,0,1,20,22.39Z" transform="translate(0 0.49)"/>
+    </g>
+  </g>
+  <g id="town">
+    <path class="map-marker-town" d="M18.77,39.25l-9.6-17a1.42,1.42,0,0,1,1.23-2.11H29.6a1.42,1.42,0,0,1,1.23,2.11l-9.6,17A1.41,1.41,0,0,1,18.77,39.25Z" transform="translate(0 0.49)"/>
+  </g>
+</svg>

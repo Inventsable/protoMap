@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #21252b;
+      }
+
+      .cls-2 {
+        fill: #c678dd;
+        stroke: #333842;
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <title>soloPlaceTest</title>
+  <g id="bg">
+    <rect class="cls-1" width="1000" height="1000"/>
+  </g>
+  <g id="landtest">
+    <rect class="cls-2" x="85" y="255" width="50" height="50" rx="23.81"/>
+    <rect class="cls-2" x="102" y="272" width="16" height="16"/>
+  </g>
+</svg>
