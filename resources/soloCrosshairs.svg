@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #21252b;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #abb2bf;
+        stroke-miterlimit: 10;
+        stroke-width: 3px;
+      }
+    </style>
+  </defs>
+  <title>soloCrosshairs</title>
+  <g id="bg">
+    <rect class="cls-1" width="1000" height="1000"/>
+  </g>
+  
+  <g id="crosshair_adv" data-name="crosshair adv">
+    <g>
+      <path class="cls-2" d="M477.64,488.32a30.08,30.08,0,0,1,0,23.36"/>
+      <path class="cls-2" d="M438.32,472.36a30.08,30.08,0,0,1,23.36,0"/>
+      <path class="cls-2" d="M422.36,511.68a30.08,30.08,0,0,1,0-23.36"/>
+      <path class="cls-2" d="M461.68,527.64a30.08,30.08,0,0,1-23.36,0"/>
+    </g>
+
+  </g>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #21252b;
+      }
+
+      .cls-2 {
+        fill: #333842;
+      }
+    </style>
+  </defs>
+  <title>miniGenesaris</title>
+  <g id="bg">
+    <rect class="cls-1" width="1000" height="1000"/>
+  </g>
+  <g id="world">
+    <rect id="_2x1bg" data-name="2x1bg" class="cls-2" y="875" width="250" height="125"/>
+  </g>
+</svg>

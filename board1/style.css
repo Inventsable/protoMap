@@ -13,8 +13,12 @@
     --color-text-idle: rgba(92, 99, 112, 1);
     --color-text-alt: rgba(99, 109, 131, 1);
 
+    --color-ghost-fill: rgba(187, 187, 187, .25);
+    --color-ghost-str: rgba(187, 187, 187, 1);
+
     --color-water: transparent;
     --color-water-hover: rgba(92, 99, 112, 1);
+    --color-water-select: rgba(97, 175, 239, .25);
     --color-terrain: rgba(51, 56, 66, 1);
     --color-shore: rgba(99, 109, 131, 1);
     --color-coast: rgba(255, 255, 255, .025);
@@ -39,7 +43,10 @@
     --scroll-idle: rgba(59, 65, 77, 1);
     --scroll-hover: rgba(65, 72, 85, 1);
     --scroll-active: rgba(78, 85, 99, 1);
-    
+
+    --textX: 100px;
+    --textY: 50px;
+
     --quart: cubic-bezier(0.76, 0.00, 0.24, 1.00);
     --quad: cubic-bezier(0.48, 0.04, 0.52, 0.96);
     --quint: cubic-bezier(0.84, 0.00, 0.16, 1.00);
@@ -75,9 +82,43 @@ svg { width: 100%; }
 
 .pro-map-info {
     box-sizing: border-box;
-    display: grid;
+    display: flex;
     width: 19vw;
+    background-color: var(--color-tile-idle);
+}
+
+.revisions {
+    width: 100%;
+    /* border: 2px solid red; */
+    height: 80vw;
+    padding: .5rem;
+    display: grid;
+    grid-template-rows: 1fr 8fr;
+}
+
+.revision-title {
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: .5rem;
+    font-size: 1.75vw;
+    color: var(--color-text-idle);
+}
+
+.revision-input {
+    font-family: 'Consolas', 'Source Code Pro', monospace;
     background-color: var(--color-bg);
+    color: var(--color-text-idle);
+    width: 17vw;
+    line-height: 1.5vw;
+    font-size: 1.25vw;
+    overflow: hidden;
+    /* border: 2px solid red; */
+    border-radius: .75rem;
+    /* word-break: break-all; */
+    white-space: normal;
+    padding: .25rem;
 }
 
 .map-background {
@@ -91,9 +132,18 @@ svg { width: 100%; }
     stroke-width: 2px;
 }
 
+
+.map-bumper-label {
+    fill: none;
+    stroke: var(--color-tile-active);
+    stroke-linejoin: round;
+    stroke-width: .4rem;
+}
+
+
 .map-bumper-btn {
-    fill: var(--color-idle);
-    stroke: var(--color-idle);
+    fill: var(--color-tile-idle);
+    stroke: var(--color-tile-idle);
     stroke-miterlimit: 10;
     stroke-width: 2.75px;
 }
@@ -104,6 +154,103 @@ svg { width: 100%; }
 
 .bumper:hover > .map-bumper-btn {
     fill: var(--color-hover);
+    stroke: var(--color-hover);
+}
+.bumper:hover > .map-bumper-label {
+    /* fill: var(--color-hover); */
+    stroke: var(--color-bumper);
+}
+
+.texter {
+    position: absolute;
+    left: var(--textX);
+    top: var(--textY);
+    width: 180px;
+    padding: .25rem 1rem;
+    color: var(--color-text-active);
+    border: 1px solid var(--color-water-select);
+    background-color: var(--color-bg);
+    border-radius: .25rem;
+    display: block;
+    /* justify-content: center; */
+}
+
+.texter-input {
+    width: 100%;
+    background-color: var(--color-idle);
+    color: var(--color-text-active);
+    padding-left: .5rem;
+    border: none;
+}
+
+.text-input:focus {
+    outline-color: var(--color-water-select);
+}
+
+.crosshair {
+    fill: none;
+    stroke: var(--color-ghost-fill);
+    stroke-miterlimit: 10;
+    stroke-width: 3px;
+}
+
+.topanno {
+    box-sizing: border-box;
+    /* border: 2px solid red; */
+    user-select: none;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: nowrap;
+    width: 78vw;
+    top: 1vw;
+    left: 1vw;
+}
+
+.instructions {
+    width: 37%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.notes {
+    width: 62%;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    /* border: 2px solid red; */
+    margin-top: .5vw;
+    color: var(--color-text-idle);
+}
+
+.notesMain {
+    width: 100%;
+    font-size: 1.5vw;
+    display: flex;
+    justify-content: flex-end;
+}
+.notesDetail {
+    width: 100%;
+    display: flex;
+    font-size: 1.35vw;
+    justify-content: flex-end;
+    margin-top: .5vw;
+}
+
+.topannoL {
+    width: 100%;
+    font-size: 1.5vw;
+    color: var(--color-text-active);
+}
+.topannoR {
+    width: 100%;
+    margin-top: .5vw;
+    font-size: 1.35vw;
+    color: var(--color-text-idle);
+    /* display: flex; */
+    /* justify-content: flex-end; */
 }
 
 .anno {
@@ -111,21 +258,44 @@ svg { width: 100%; }
     position: absolute;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
     width: 19vw;
-    top: 68vw;
+    top: 67.5vw;
     left: 1vw;
+}
+
+.extendedAnno {
+    user-select: none;
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: auto;
+    top: 76vw;
+    left: 23vw;
+    color: var(--color-text-active);
+    /* height: 2rem; */
+    /* border: 2px solid red; */
+}
+
+.extendedAnnoL {
+    font-size: 3vw;
+    padding: .25rem 1rem;
+}
+.extendedAnnoR {
+    font-size: 3vw;
+    padding: .25rem 1rem;
 }
 
 .annoL {
     width: 48%;
-    font-size: 1.5rem;
+    font-size: 2vw;
     color: var(--color-text-active);
 }
 
 .annoR {
     width: 48%;
-    font-size: 1rem;
+    font-size: 1.25vw;
     color: var(--color-text-idle);
     display: flex;
     justify-content: flex-end;
@@ -135,6 +305,17 @@ svg { width: 100%; }
 /* [class^="map-marker-"] {
     cursor: pointer;
 } */
+
+.ghost-marker-mask {
+    fill: none;
+}
+
+.ghost-marker {
+    fill: var(--color-ghost-fill);
+    stroke: var(--color-ghost-str);
+    stroke-width: 1px;
+    cursor: default;
+}
 
 .map-marker-place-idle {
     fill: var(--color-water-hover);
@@ -221,12 +402,7 @@ svg { width: 100%; }
     fill: var(--color-terrain);
 }
 
-.map-bumper-label {
-    fill: none;
-    stroke: var(--color-bumper);
-    stroke-linejoin: round;
-    stroke-width: .625rem;
-}
+
 
 [class^="map-terrenus-"] {
     transition: 
